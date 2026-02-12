@@ -1,11 +1,33 @@
 {
-  "name": "mcp-jumpserver",
+  "name": "@xiaoyuzhzh/mcp-jumpserver",
   "version": "0.1.0",
   "type": "module",
-  "description": "MCP tool for getting JumpServer temporary DB credentials",
+  "description": "MCP server for getting temporary database credentials from JumpServer",
+  "license": "MIT",
+  "author": "xiaoyuzhzh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoyuzhzh/mcp-jumpserver.git"
+  },
+  "homepage": "https://github.com/xiaoyuzhzh/mcp-jumpserver",
+  "bugs": {
+    "url": "https://github.com/xiaoyuzhzh/mcp-jumpserver/issues"
+  },
+  "keywords": [
+    "mcp",
+    "jumpserver",
+    "database",
+    "credentials",
+    "model-context-protocol"
+  ],
   "bin": {
     "mcp-jumpserver": "src/index.js"
   },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "start": "node src/index.js"
   },
@@ -13,7 +35,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "latest",
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "zod": "^4.1.13"
   }
 }
