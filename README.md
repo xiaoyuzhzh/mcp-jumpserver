@@ -4,9 +4,20 @@ MCP server for getting temporary database credentials from [JumpServer](https://
 
 ## Usage
 
-### Configure MCP
+### Claude Code
+> 环境变量可以自己单独维护到系统里
+```bash
+claude mcp add jumpserver \
+  -e JUMPSERVER_ACCESS_KEY_ID=your-access-key-id \
+  -e JUMPSERVER_ACCESS_KEY_SECRET=your-access-key-secret \
+  -e JUMPSERVER_BASE_URL=https://jump.example.com \
+  -e JUMPSERVER_ORG_ID=your-org-id \
+  -- npx -y @xiaoyuzhzh/mcp-jumpserver
+```
 
-Add to your MCP client configuration (e.g. Claude Desktop `claude_desktop_config.json`):
+### Claude Desktop
+
+Add to your `claude_desktop_config.json`:
 
 ```json
 {
