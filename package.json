@@ -1,0 +1,19 @@
+{
+  "name": "mcp-jumpserver",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "MCP tool for getting JumpServer temporary DB credentials",
+  "bin": {
+    "mcp-jumpserver": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "zod": "^4.1.13"
+  }
+}
