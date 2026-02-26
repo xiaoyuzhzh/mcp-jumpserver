@@ -1,7 +1,5 @@
 import crypto from "crypto";
 
-const DEFAULT_ACCOUNT = "jumpserver_r";
-const DEFAULT_SEARCH = "DB-ltc-prod";
 const DEFAULT_BASE_PATH = "/api/v1";
 
 const DEFAULT_CONNECT_OPTIONS = {
@@ -162,13 +160,17 @@ function safeShellValue(value) {
  * 根据数据库资源名称获取临时连接信息。
  */
 export async function getJumpserverDbCredentials({
-  assetName = DEFAULT_SEARCH,
-  account = DEFAULT_ACCOUNT,
+  assetName,
+  account,
   orgId,
 }) {
   const search = String(assetName || "").trim();
+  const accountName = String(account || "").trim();
   if (!search) {
     throw new Error("asset_name cannot be empty.");
+  }
+  if (!accountName) {
+    throw new Error("account cannot be empty.");
   }
 
   const assetsData = await jumpserverRequest({
@@ -185,9 +187,9 @@ export async function getJumpserverDbCredentials({
     path: "/authentication/connection-token/",
     body: {
       asset: selectedAsset.id,
-      account,
+      account: accountName,
       protocol: "mysql",
-      input_username: account,
+      input_username: accountName,
       input_secret: "",
       connect_method: "db_guide",
       connect_options: DEFAULT_CONNECT_OPTIONS,

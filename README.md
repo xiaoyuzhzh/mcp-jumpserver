@@ -54,11 +54,11 @@ Get temporary MySQL connection credentials from JumpServer by asset name.
 
 **Input:**
 
-| Parameter | Type | Required | Default | Description |
-|---|---|---|---|---|
-| `asset_name` | string | No | `DB-ltc-prod` | Database asset name in JumpServer |
-| `account` | string | No | `jumpserver_r` | Account username |
-| `org_id` | string | No | From env | Organization ID |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `asset_name` | string | Yes | Database asset name in JumpServer |
+| `account` | string | Yes | Account username |
+| `org_id` | string | Yes | Organization ID (from environment variable `JUMPSERVER_ORG_ID`) |
 
 **Output:**
 
